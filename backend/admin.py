@@ -1,5 +1,5 @@
 from django.contrib import admin
-from .models import Cliente, Produto, Categoria, Endereco, Pedido, ItemPedido
+from .models import Cliente, Produto, Categoria, Endereco, Pedido, ItemPedido, Vendedor
 
 @admin.register(Cliente)
 class ClienteAdmin(admin.ModelAdmin):
@@ -13,3 +13,4 @@ admin.site.register(Categoria)
 admin.site.register(Endereco)
 admin.site.register(Pedido)
 admin.site.register(ItemPedido)
+admin.site.register(Vendedor)
