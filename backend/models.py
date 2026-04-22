@@ -45,6 +45,18 @@ class Pedido(models.Model):
         db_table = 'pedidos'
 
 class ItemPedido(models.Model):
+
+class Vendedor(models.Model):
+    nome = models.CharField(max_length=100)
+    cpf = models.CharField(max_length=14, unique=True) # Formato 000.000.000-00
+    email = models.EmailField(unique=True)
+    comissao = models.DecimalField(max_digits=5, decimal_places=2, default=0.0)
+
+    class Meta:
+        db_table = 'vendedores'
+
+    def __str__(self):
+        return self.nome
     quantidade = models.IntegerField()
     preco_unitario = models.DecimalField(max_digits=10, decimal_places=2)
 
